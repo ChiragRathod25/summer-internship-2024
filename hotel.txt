@@ -1,6 +1,0 @@
-Hotel H
-Alpha Hotel
-this is added by vivek 
-//comment added by chirag
-// this comment is added by vivek baraiya
-//another comment added by chirag
