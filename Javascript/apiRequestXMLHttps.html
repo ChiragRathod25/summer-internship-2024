@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XML Http Request</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .container{
+        margin: 20px;
+        /* height: 350px; */
+        width:200px ;
+        display: grid;
+        grid-auto-flow: row;
+        row-gap: 1rem;
+        justify-content: center;
+    }
+   
+   .container >h2{
+    margin-top: 15px 0;
+   }
+   .container >.repos{
+    margin: 15px 0;
+   }
+   .container>img{
+    height: 50%;
+
+   }
+</style>
+<body>
+    <div class="container">
+        <h2  id="username">
+            chiragrathod25
+        </h2>
+        <div class="repos">
+            Hellp
+        </div>
+        <img src="" alt="" class="profile">
+    </div>
+    <script>
+        const githubProfileUrl="https://api.github.com/users/chiragrathod25";
+        let githubProfileReposUrl;
+        const xhr=new XMLHttpRequest();
+        xhr.open("GET",githubProfileUrl);
+        xhr.onreadystatechange=function(){
+            // console.log(xhr.readyState);
+            if(xhr.readyState===4){
+                const data=JSON.parse(this.responseText);
+                // console.log(data);
+
+                //setting info to HTML
+                const card=document.querySelector('.container');
+                
+                //set username
+                card.children[0].innerHTML=data.login;
+                
+                //get repo url
+                githubProfileReposUrl=data.repos_url;
+                
+                //setting img data
+                card.children[2].setAttribute('src',data.avatar_url);
+                
+            }
+        }
+        xhr.send();
+        
+    </script>
+</body>
+</html>

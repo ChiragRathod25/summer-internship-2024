@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirect Page</title>
+    <style>
+        *{
+            margin: 0;;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body id="body" >
+    <script>
+        document.querySelector('body').innerHTML="<h1>Hello</h1>"
+        
+        // this page will redirect to another webpage if there is not movement of mouse and keyboard till 5 second
+        
+        setInterval(() => {
+            console.log(Date.now());    
+        }, 1000);
+        
+        let start;
+        function setagain(){
+            if(start!==null){
+                start=null;
+            }
+            console.log("reseted !!");
+            start=setTimeout(function(){
+                // console.log("time out")
+                window.location.href="https://www.google.com";
+            },5000)    
+        }
+        setagain();
+
+        const resetTimer=function(){
+            
+            clearTimeout(start);
+            setagain();
+        }  
+        document.querySelector('html').addEventListener('mousemove',resetTimer);
+        window.addEventListener('keydown',resetTimer);
+        </script>
+</body>
+</html>
