@@ -32,8 +32,8 @@ let cardDetail :cardDetails={
     cardDate:"12/05/1670",
     cvv:465,
 }
-function getcardDetails(cardDetail){
-    console.log(cardDetail)
+function getcardDetails(cd:cardDetails){
+    console.log(cd)
 }
 getcardDetails(cardDetail)
 
