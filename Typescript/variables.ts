@@ -2,7 +2,6 @@ let greetings:string="Chirag";
 
 console.log(greetings)
 greetings.toLowerCase()
-export{}
 
 //number
 let userid:number=61;
@@ -13,3 +12,5 @@ console.log(userid.valueOf())
 //boolean
 let isLoggedIn:boolean=false;
 console.log(isLoggedIn.valueOf());
+
+export{}
