@@ -13,7 +13,9 @@
 // .forEach() : iterate through all the elements of array 
 // .includes() : to check array includes certain value or not 
 // .indexOf() : returns the first index at which a given element can be found
+// .lastIndexOf() : returns the last index at which a given element is found  
 // .join() : create and returns a new string by concating all of the elements in the array  
+// .key() : to get keys of array 
 
 
 
@@ -105,3 +107,11 @@ const matrix = [
 
 console.log(matrix.join())
 console.log(matrix.join('||'))
+
+
+
+//.key()
+// fruit.keys() : returns iterable iterator object 
+for(const keys of fruit.keys()){
+  console.log(keys)
+}
