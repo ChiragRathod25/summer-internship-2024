@@ -154,7 +154,8 @@ console.log(sh)
 
 
 // +++++++++++++++++++++++
-// Object.entries() -- converts to array, which contains sub array with key and value
+// Object.entries() -
+- converts to array, which contains sub array with key and value
 console.log(one)
 console.log(Object.entries(one))
 for(const [key,value] of Object.entries(one))
