@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closures</title>
+    <script>
+
+        // HTML code for testing purposes (do not submit uncommented):
+
+
+
+    </script>
+</head>
+
+<body>
+    In my life, I used the following web search engines:<br />
+    <a href="//www.yahoo.com">Yahoo!</a><br />
+    <a href="//www.altavista.com">AltaVista</a><br />
+    <a href="//www.google.com">Google</a><br />
+
+</body>
+<script>
+    function registerHandlers() {
+        console.log(`hi`);
+        let as = Array.from(document.getElementsByTagName('a'));
+        for (var i = 0; i < as.length; i++) {
+            // console.log(as[i]);
+            as[i].onclick = function (e) {
+                e.preventDefault();
+                alert(as.indexOf(e.target));
+                return false;
+            }
+        }
+    }
+    registerHandlers();
+</script>
+
+</html>
